@@ -46,5 +46,6 @@ void LobbyGlobalChatUpdate(void *instance)
 
 void Hooks()
 {
+    hook((void*)offsets->LobbyGlobalChatUpdate, (void*)LobbyGlobalChatUpdate, (void**)&old_LobbyGlobalChatUpdate); //Update (CombatMaster.View.UI.Lobby.LobbyGlobalChat)
     SendChatMessage = (void(*)(void*, _monoString*))offsets->isGlobalChatMessage; //SendGlobalMessage (CombatMaster.View.UI.Lobby.LobbyGlobalChat)
 }
